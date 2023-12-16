@@ -1,0 +1,35 @@
+
+                    ##        .            
+              ## ## ##       ==            
+           ## ## ## ##      ===            
+       /""""""""""""""""\___/ ===        
+  ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+       \______ o          __/            
+         \    \        __/             
+          \____\______/                
+
+          /////////
+        /////@@@/////
+      ////@@@@@@@@@///
+     ////@@///////@@///
+     /({/@@/(o/o)/@@/})/
+      ///@@///////@@///
+       ///@@@@@@@@@///
+         ////@@@////
+          /////////
+		  
+This is a set of config files to run BeBot in Docker.
+More documentation at http://wiki.bebot.link/index.php/Docker
+
+QUICKNOTE
+=========
+
+There are 4 differents sets of Docker config available in there :
+
+From root folder, you can choose to run either stable ("official") or dev/beta ("sandbox").
+
+Inside of both, you then proceed according to your SQL location :
+- for external or localhost existing SQL service, opt for "botonly" (= 1 container just for bot)
+- otherwise if have no SQL yet, go for "botplusdb" (= 2 containers, 1 for SQL and 1 for bot)
+
+More details are provided within upper documentation.
