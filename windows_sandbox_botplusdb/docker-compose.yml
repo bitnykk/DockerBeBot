@@ -4,12 +4,12 @@ services:
     build: .
     image: bebot-image
     volumes:
-      - ./Conf:/BeBot/Conf/
-      - ./Custom:/BeBot/Custom/
-      - ./Extras/Bank:/BeBot/Extras/Bank
-      - ./Extras/Scripts:/BeBot/Extras/Scripts
-      - ./log:/BeBot/log/
-      - ./Text:/BeBot/Text/
+      - Conf:/BeBot/Conf
+      - Custom:/BeBot/Custom
+      - Bank:/BeBot/Extras/Bank
+      - Scripts:/BeBot/Extras/Scripts
+      - log:/BeBot/log
+      - Text:/BeBot/Text
     stdin_open: true
     tty: true
     restart: unless-stopped
@@ -23,7 +23,15 @@ services:
       MYSQL_USER: bebotuzr
       MYSQL_PASSWORD: botpass
     volumes:
-      - ./db:/var/lib/mysql
+      - db:/var/lib/mysql
     ports:
       - "3306:3306"
     restart: unless-stopped
+volumes:
+  Conf:
+  Custom:
+  Bank:
+  Scripts:
+  log:
+  Text:
+  db:

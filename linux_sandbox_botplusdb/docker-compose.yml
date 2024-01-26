@@ -1,0 +1,29 @@
+version: '3'
+services:
+  bebot:
+    build: .
+    image: bebot-image
+    volumes:
+      - ./Conf:/BeBot/Conf
+      - ./Custom:/BeBot/Custom
+      - ./Extras/Bank:/BeBot/Extras/Bank
+      - ./Extras/Scripts:/BeBot/Extras/Scripts
+      - ./log:/BeBot/log
+      - ./Text:/BeBot/Text
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    depends_on:
+      - bebotdb
+  bebotdb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: bebotdbname
+      MYSQL_USER: bebotuzr
+      MYSQL_PASSWORD: botpass
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped

@@ -6,6 +6,8 @@ errorMessage() {
 }
 EXITCODE=255
 git pull
+ip a
+sleep 5
 while [ "$EXITCODE" -eq 255 ]; do
         trap "" TERM
         # shellcheck disable=SC2086

@@ -4,12 +4,12 @@ services:
     build: .
     image: bebot-image
     volumes:
-      - ./Conf:/BeBot/Conf/
-      - ./Custom:/BeBot/Custom/
+      - ./Conf:/BeBot/Conf
+      - ./Custom:/BeBot/Custom
       - ./Extras/Bank:/BeBot/Extras/Bank
       - ./Extras/Scripts:/BeBot/Extras/Scripts
-      - ./log:/BeBot/log/
-      - ./Text:/BeBot/Text/
+      - ./log:/BeBot/log
+      - ./Text:/BeBot/Text
     stdin_open: true
     tty: true
     restart: unless-stopped

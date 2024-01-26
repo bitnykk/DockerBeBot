@@ -1,0 +1,22 @@
+version: '3'
+services:
+  bebot:
+    build: .
+    image: bebot-image
+    volumes:
+      - Conf:/BeBot/Conf
+      - Custom:/BeBot/Custom
+      - Bank:/BeBot/Extras/Bank
+      - Scripts:/BeBot/Extras/Scripts
+      - log:/BeBot/log
+      - Text:/BeBot/Text
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+volumes:
+  Conf:
+  Custom:
+  Bank:
+  Scripts:
+  log:
+  Text:

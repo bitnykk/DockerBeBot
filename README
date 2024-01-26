@@ -24,12 +24,21 @@ More documentation at http://wiki.bebot.link/index.php/Docker
 QUICKNOTE
 =========
 
-There are 4 differents sets of Docker config available in there :
+There are 8 differents sets of Docker config available in there.
 
-From root folder, you can choose to run either stable ("official") or dev/beta ("sandbox").
+Their name has a shape looking as "system_version_option", detailed below ...
 
-Inside of both, you then proceed according to your SQL location :
+System : choose among "linux" or "windows" base according to hosting Operating System.
+
+Version : decide between either stable ("official") or dev/beta ("sandbox").
+
+Option :
 - for external or localhost existing SQL service, opt for "botonly" (= 1 container just for bot)
-- otherwise if have no SQL yet, go for "botplusdb" (= 2 containers, 1 for SQL and 1 for bot)
+- otherwise if have no SQL service yet, go for "botplusdb" (= 2 containers : 1 for SQL + 1 for bot)
 
-More details are provided within upper documentation.
+Example 1 :
+Windows 10 host and wanting a stable version with a new dedicated SQL => "windows_official_botplusdb"
+Example 2 :
+Debian 12 host and experimental version for an existing SQL => "linux_sandbox_botonly"
+
+More details are provided within upper linked documentation.
