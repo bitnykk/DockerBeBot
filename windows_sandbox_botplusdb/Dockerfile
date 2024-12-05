@@ -9,5 +9,5 @@ RUN apk --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/communit
 RUN git clone https://github.com/bitnykk/BeBot.git
 COPY docker-entrypoint.sh /BeBot
 RUN chmod +x /BeBot/docker-entrypoint.sh
-RUN sudo ln -s /usr/bin/php83 /usr/bin/php
+RUN sudo ln -sf /usr/bin/php83 /usr/bin/php
 WORKDIR /BeBot
